@@ -236,6 +236,8 @@ CGI is a standard for running external programs from a web server. When a user r
 - [Simple server with C++](https://ncona.com/2019/04/building-a-simple-server-with-cpp/)
 - [HTTP and CGI explained](https://www.garshol.priv.no/download/text/http-tut.html)
 - [Beej's Guide](https://beej.us/guide/bgnet/html/)
+- [Load Testing Web Servers with Siege](https://www.linode.com/docs/guides/load-testing-with-siege/)
+- [Configuration file](http://nginx.org/en/docs/dirindex.html)
 
 ## Skills
 
