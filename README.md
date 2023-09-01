@@ -43,7 +43,9 @@ HTTP messages are how data is exchanged between a server and a client. There are
 
 <details>
     <summary>HTTP Requests</summary>
+
 - Start line
+
 HTTP requests are messages sent by the client to initiate an action on the server. Their start-line contain three elements:
 
 1. An HTTP method, a verb (like GET, PUT or POST) or a noun (like HEAD or OPTIONS), that describes the action to be performed.
@@ -80,6 +82,7 @@ Bodies can be broadly divided into two categories:
 
 <details>
     <summary>HTTP Responses</summary>
+
 - Status line
 
 The start line of an HTTP response, called the status line, contains the following information:
@@ -146,11 +149,12 @@ A basic HTTP web server consists of several components that work together to rec
 
 <details>
     <summary>Server Core</summary>
+
     The networking part of a web server that handles TCP connections and performs tasks such as listening for incoming requests and sending back responses. It is responsible for the low-level networking tasks of the web server, such as creating and managing sockets, handling input and output streams, and managing the flow of data between the server and clients.
 
-    Before writing your webserver, I would recommend reading this awesome guide on building simple TCP client/server in C as it will help you get a good understanding of how TCP works in C/C++. also you would need to understand I/O multiplixing, this video will help you grasp the main idea of select().
+Before writing your webserver, I would recommend reading this awesome guide on building simple TCP client/server in C as it will help you get a good understanding of how TCP works in C/C++. also you would need to understand I/O multiplixing, this video will help you grasp the main idea of select().
 
-    The I/O Multiplexing process in our web server is summarized in the flowchart below. (CGI is not included in the flowchart but may be added in the future)
+The I/O Multiplexing process in our web server is summarized in the flowchart below. (CGI is not included in the flowchart but may be added in the future)
 
 </details>
 
@@ -162,14 +166,18 @@ A basic HTTP web server consists of several components that work together to rec
 
 <details>
     <summary>Response Builder</summary>
+
     The response builder is responsible for constructing and formatting the HTTP responses that are sent back to clients in response to their requests. In this web server, the Response class is responsible for building and storing the HTTP response, including the status line, headers, and message body. The response builder may also perform tasks such as setting the appropriate status code and reason phrase based on the result of the request, adding headers to the response to provide additional information about the content or the server, and formatting the message body according to the content type and encoding of the response. For example, if the server receives a request for a webpage from a client, the server will parse the request and pass it to a Response object which will fetch the contents of the webpage and construct the HTTP response with the HTML content in the message body and the appropriate headers, such as the Content-Type and Content-Length headers.
+
 </details>
 
 <details>
     <summary>Configuration File</summary>
+
     Configuration file is a text file that contains various settings and directives that dictate how the web server should operate. These settings can include things like the port number that the web server should listen on, the location of the web server's root directory, and many other settings.
 
     Here is an example fie that shows config file format and supported directives.
+
     ```
     server {
     	listen 8001;                        # listening port, mandatory parameter
@@ -205,9 +213,8 @@ A basic HTTP web server consists of several components that work together to rec
 
 <details>
     <summary>CGI</summary>
-    CGI is a standard for running external programs from a web server. When a user requests a web page that should be handled by a CGI program, the web server executes the program and returns the output to the user's web browser.
 
-    CGI programs are simply scripts that can be written in any programming language, such as Perl, Python, or bash, and are typically used to process data submitted by a user through a web browser, or to generate dynamic content on a web page.
+    CGI is a standard for running external programs from a web server. When a user requests a web page that should be handled by a CGI program, the web server executes the program and returns the output to the user's web browser. CGI programs are simply scripts that can be written in any programming language, such as Perl, Python, or bash, and are typically used to process data submitted by a user through a web browser, or to generate dynamic content on a web page.
 
 <div align="center">
 
@@ -246,7 +253,6 @@ A basic HTTP web server consists of several components that work together to rec
         <td align="center"><a href="https://www.linkedin.com/in/jessica-fernanda-programadora"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/80687429?v=4" width="100px;" alt=""/><br /><sub><b>Jessica Fernanda</b></sub></a><br />
 
   </tr>
-</div>
 
 <div align="right">
   <b><a href="#index">↥ back to top</a></b>
