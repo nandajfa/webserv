@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img alt="badge cpp" src="./img/cpp_dark.svg" />
+	<img alt="badge webserv" src="./img/webserv_dark.svg" />
  </h1>
 
  <div align="center">
