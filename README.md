@@ -25,7 +25,7 @@
 - [HTTO Methods](#http-methods)
 - [Parts of a web server](#parts-of-a-web-server)
 - [References 📌](#references)
-- []()
+- [Usage](#usage)
 - [Skills 📄](#skills)
 - [Author Info ✒️](#author)
 
@@ -232,7 +232,7 @@ CGI is a standard for running external programs from a web server. When a user r
 
 ## Usage
 
-```
+```bash
 # Clone the project and acess the folder
 git clone https://github.com/nandajfa/webserv.git && cd webserv
 
