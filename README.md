@@ -240,7 +240,7 @@ git clone https://github.com/nandajfa/webserv.git && cd webserv
 make
 
 # Run the apllication with config file
-./weberv <name>.conf
+./weberv [configuration file]
 
 # Access the default website using URL
 http://localhost/<name>/
