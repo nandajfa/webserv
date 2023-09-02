@@ -25,6 +25,7 @@
 - [HTTO Methods](#http-methods)
 - [Parts of a web server](#parts-of-a-web-server)
 - [References 📌](#references)
+- []()
 - [Skills 📄](#skills)
 - [Author Info ✒️](#author)
 
@@ -123,7 +124,7 @@ x-frame-options: DENY
 
 Bodies can be broadly divided into three categories:
 
-1. ingle-resource bodies, consisting of a single file of known length, defined by the two headers: Content-Type and Content-Length.
+1. Single-resource bodies, consisting of a single file of known length, defined by the two headers: Content-Type and Content-Length.
 2. Single-resource bodies, consisting of a single file of unknown length, encoded by chunks with Transfer-Encoding set to chunked.
 3. Multiple-resource bodies, consisting of a multipart body, each containing a different section of information. These are relatively rare.
 </details>
@@ -229,6 +230,26 @@ CGI is a standard for running external programs from a web server. When a user r
 </div>
 </br>
 
+## Usage
+
+```
+# Clone the project and acess the folder
+git clone https://github.com/nandajfa/webserv.git && cd webserv
+
+# Run make to compile the program
+make
+
+# Run the apllication with config file
+./weberv <name>.conf
+
+# Access the default website using URL
+http://localhost/<name>/
+
+# Clean the program
+make fclean
+
+```
+
 ## References
 
 - [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
@@ -238,6 +259,8 @@ CGI is a standard for running external programs from a web server. When a user r
 - [Beej's Guide](https://beej.us/guide/bgnet/html/)
 - [Load Testing Web Servers with Siege](https://www.linode.com/docs/guides/load-testing-with-siege/)
 - [Configuration file](http://nginx.org/en/docs/dirindex.html)
+- [Front-end](https://www.youtube.com/watch?v=VKmPGmFY7H4&t=777s)
+- [Sockets - Client - Server](https://www.youtube.com/watch?v=lc6U93P4Sxw)
 
 ## Skills
 
