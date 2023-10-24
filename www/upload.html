@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon"
+        href="https://cdn.greatsoftwares.com.br/arquivos/paginas/7460-069a1f4f8b36e2f74a9525cd6e009e94.png">
+
+    <title>Envio de Arquivo</title>
+</head>
+
+<body>
+    <h1>Envio de Arquivo para o Servidor</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Escolha um arquivo:</label>
+        <input type="file" name="file" id="file"><br><br>
+        <input type="submit" name="submit" value="Enviar">
+    </form>
+    <p id="responseMessage"></p>
+
+    <script>
+        // JavaScript para lidar com o clique no botão de envio
+        document.getElementById('submitButton').addEventListener('click', function () {
+            var formData = new FormData();
+            var fileInput = document.getElementById('fileInput');
+            formData.append('file', fileInput.files[0]);
+
+            // Faça uma solicitação POST para o servidor
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById('responseMessage').textContent = 'Arquivo enviado com sucesso!';
+                    } else {
+                        document.getElementById('responseMessage').textContent = 'Erro ao enviar o arquivo.';
+                    }
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+
+</html>

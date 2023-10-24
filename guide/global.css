@@ -1,0 +1,158 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-color: #2A2B38;
+	font-family: "Dosis", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+#tsparticles {
+	opacity: 0.23;
+	z-index: -1;
+}
+
+.btn {
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+	background: #2A2B38;
+	padding: 15px 40px;
+	margin: 4px 12px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	transition: 0.5s linear;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #00C1BB;
+}
+
+/* ========= Cards ========= */
+.card {
+	min-width: 80%;
+	min-height: 60vh;
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	/* Brilho no card */
+	box-shadow: 0 0 4px #09f7f2, 0 0 24px #00C1BB;
+	padding: 32px 20px;
+	text-align: center;
+	max-width: 400px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.card-title {
+	color: #00C1BB;
+	font-size: 40px;
+	margin-bottom: 12px;
+}
+
+.card-text {
+	color: #202026;
+	font-size: 20px;
+	margin-bottom: 8px;
+}
+
+.card-group-link {
+	display: flex;
+	flex-wrap: wrap;
+	width: 60%;
+}
+
+.card-link {
+	color: #00C1BB;
+	font-size: 20px;
+	padding: 0 4px;
+	cursor: pointer;
+	transition: 0.5s linear;
+}
+
+.card-link:hover {
+	font-weight: bold;
+}
+
+/* ========= Forms ========= */
+.form-position {
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+form {
+	text-align: left;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.input-file-group {
+	margin: 20px 0 40px;
+	display: flex;
+	flex-direction: column;
+}
+
+form input[type="text"],
+form textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px #2A2B38 solid;
+	font-size: 16px;
+	border-radius: 4px;
+}
+
+.button-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+#gif {
+	max-width: 200px;
+	max-height: 130px;
+	width: auto;
+	height: auto;
+}
+
+.w-70 {
+	width: 70%;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.mx-500 {
+	max-width: 500px;
+}
+
+.mt-36 {
+	margin-top: 36px;
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}

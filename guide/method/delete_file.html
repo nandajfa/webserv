@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Webserv - delete</title>
+	<link rel="stylesheet" href="../global.css">
+	<link rel="icon"
+		href="https://cdn.greatsoftwares.com.br/arquivos/paginas/7460-069a1f4f8b36e2f74a9525cd6e009e94.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:300,400,700,800">
+</head>
+
+<body>
+	<div class="card">
+		<h1 class="card-title">Excluir arquivo</h1>
+
+		<form id="form" class="w-50 mx-500">
+			<div class="form-group">
+				<label for="file-path">Nome do arquivo:</label>
+				<input type="text" id="file-path" name="file-path" required>
+			</div>
+
+			<div class="button-container">
+				<a href="./delete.html" class="btn">Voltar</a>
+				<button class="btn" type="submit" onclick="deleteFile()">Deletar arquivo</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+		function deleteFile() {
+			var filePath = document.getElementById("file-path").value;
+
+			fetch(filePath, {
+				method: 'DELETE'
+			})
+				.then(response => {
+					if (response.ok) {
+						alert('Arquivo deletado com sucesso!');
+					} else {
+						alert('Falha ao deletar o arquivo.');
+					}
+				})
+				.catch(error => {
+					console.error('Erro:', error);
+				});
+		}
+	</script>
+
+	<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
+	<script type="text/javascript" src="../background.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upload de Arquivos</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+
+		.container {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		#fileInput {
+			display: none;
+		}
+
+		label {
+			display: block;
+			padding: 10px;
+			background-color: #3498db;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		label:hover {
+			background-color: #3498db;
+		}
+
+		#fileName {
+			margin-top: 10px;
+		}
+
+		.btn-primary {
+			display: inline-block;
+			padding: 10px 20px;
+			cursor: pointer;
+			background-color: #14a44d;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			width: 240px;
+			margin: auto;
+		}
+
+		.mt-16 {
+			margin-top: 16px;
+		}
+
+		.align-center {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Upload de Arquivos</h1>
+		<form id="uploadForm" enctype="multipart/form-data" class="align-center">
+			<label for="fileInput">Escolher arquivo</label>
+			<input type="file" id="fileInput" name="files">
+			<button type="submit" value="Enviar Arquivo" onclick="uploadFile(event)" class="btn-primary mt-16">
+				Enviar arquivo
+			</button>
+		</form>
+	</div>
+
+	<script>
+		function uploadFile(event) {
+			event.preventDefault(); // Evita o envio padrão do formulário
+
+			var fileInput = document.getElementById("fileInput");
+			var file = fileInput.files[0];
+			var formData = new FormData();
+
+			if (file) {
+				formData.append("arquivo", file);
+
+				fetch("/images", {
+					method: "POST",
+					body: formData
+				})
+					.then(response => response.json())
+					.then(data => {
+						if (data.status === 'success') {
+							alert('Arquivo salvo com sucesso!');
+						} else {
+							alert('Erro ao salvar o arquivo. Tente novamente mais tarde.');
+						}
+					})
+					.catch(error => {
+						console.error("Erro ao enviar o arquivo: " + error);
+						alert('Erro ao salvar o arquivo. Tente novamente mais tarde.');
+					});
+			} else {
+				console.error("Nenhum arquivo selecionado.");
+				alert('Erro ao salvar o arquivo. Tente novamente mais tarde.');
+			}
+		}
+
+	</script>
+</body>
+
+</html>

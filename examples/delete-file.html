@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Deletar Arquivo</title>
+</head>
+
+<body>
+	<h1>Deletar Arquivo</h1>
+	<div>
+		<label for="file-path">Caminho do Arquivo:</label>
+		<input type="text" id="file-path" required>
+		<button onclick="deletarArquivo()">Deletar Arquivo</button>
+	</div>
+
+	<script>
+		function deletarArquivo() {
+			var filePath = document.getElementById("file-path").value;
+
+			fetch(filePath, {
+				method: 'DELETE'
+			})
+				.then(response => {
+					if (response.ok) {
+						alert('Arquivo deletado com sucesso!');
+					} else {
+						alert('Falha ao deletar o arquivo.');
+					}
+				})
+				.catch(error => {
+					console.error('Erro:', error);
+				});
+		}
+	</script>
+</body>
+
+</html>

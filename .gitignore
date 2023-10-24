@@ -1,0 +1,11 @@
+# Object files
+*.o
+
+# Libraries
+*.a
+
+# vscode
+.vscode
+
+# Executables
+webserv
