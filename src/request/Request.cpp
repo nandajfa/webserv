@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:24:07 by jefernan          #+#    #+#             */
-/*   Updated: 2023/10/24 14:25:49 by jefernan         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:47:19 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,12 +123,15 @@ bool HttpRequest::_parseFirstLine(std::string &requestLine)
 
     if (!(iss >> this->_method >> this->_uri >> this->_httpVersion)
         || requestLine != this->_method + " " + this->_uri + " " + this->_httpVersion
-        || std::find(_allowMethods.begin(), _allowMethods.end(), _method) == _allowMethods.end()
         || this->_uri[0] != '/') {
         this->statusCode = BAD_REQUEST;
         return (true);
     }
 
+    if (std::find(_allowMethods.begin(), _allowMethods.end(), _method) == _allowMethods.end()){
+        this->statusCode = METHOD_NOT_ALLOWED;
+        return (true);
+    }
     if (this->_httpVersion != "HTTP/1.1") {
         this->statusCode = HTTP_VERSION_NOT_SUPPORTED;
         return (true);
